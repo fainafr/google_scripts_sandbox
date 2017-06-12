@@ -1,1 +1,1 @@
-# google_scripts_sandbox
+Exactly as it says on the tin: sandbox for learning Google Scripts.
