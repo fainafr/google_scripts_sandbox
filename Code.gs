@@ -75,22 +75,7 @@ var folders = DriveApp.getFolders();
  //  Logger.log(folder.getName());
  //  Logger.log(folder.getOwner());
 }
-//====================================================
-function searchinstring(){
-var str = "people do task"
-//INDEXOF
-if (str) {
-    if (str.indexOf('task') > -1) {
-        Logger.log("found")
-    }
-   }
-//REGEX
- if (str) {
-    if (/task/.test(str)) {
-        Logger.log("found2")
-    }
-   }
-}
+
 
 //===============================================
 function opendocbyid() {
@@ -113,3 +98,50 @@ while (files.hasNext()) {
  //  Logger.log(folder.getName());
  //  Logger.log(folder.getOwner());
 
+
+//===================================================
+function FindEmailSentenceinDocument() {
+var doc = DocumentApp.openById('17JbqmvepLpXfYl7ItFzeSnz8oclGSR1gKUH9BKzmY9Q');
+////Logger.log(doc.getName());
+var DataB = doc.getBody();
+var docText = (DataB.getText());
+  if (docText) {
+    if (/task/.test(docText)) {
+        Logger.log(/[^.]*@[^.]*\./.exec(docText))
+        Logger.log(/@/.toString(docText)) 
+    }
+   }
+}
+
+//--------------------------------JS-EXERCISES----------
+//===================================================
+function testarraysort() {
+var points = [40, 100, 1, 5, 25, 10];
+  Logger.log("init=" + points);
+  points.sort()
+  Logger.log("sort=" + points);
+  points.sort(function(a, b){
+Logger.log("a=" + a);
+Logger.log("b=" + b);
+Logger.log("a-b=" + (a - b));
+return (a-b);
+  })
+Logger.log("valuesort" + points);
+}
+
+//====================================================
+function searchinstring(){
+var str = "people do task"
+//INDEXOF
+if (str) {
+    if (str.indexOf('task') > -1) {
+        Logger.log("found")
+    }
+   }
+//REGEX
+ if (str) {
+    if (/task/.test(str)) {
+        Logger.log("found2")
+    }
+   }
+}
