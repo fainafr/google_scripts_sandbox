@@ -145,3 +145,10 @@ if (str) {
     }
    }
 }
+
+///===============writeToActiveSheet
+function writetoactivesheet(data, sheet, row, column){
+  var Asheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheet)
+  var Acell = Asheet.getRange("a1").offset(row, column)
+  Acell.setValue(data)
+}
